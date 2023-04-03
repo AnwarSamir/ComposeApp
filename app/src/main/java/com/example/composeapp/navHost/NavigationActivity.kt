@@ -28,9 +28,9 @@ class NavigationActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-           Scaffold( topBar = { AppTopBar(onUpClick = {}) }) { padding->
-               Box(Modifier.padding(16.dp)) {
-                   val navController = rememberNavController()
+            val navController = rememberNavController()
+           Scaffold( topBar = { AppTopBar(onUpClick = {navController.navigateUp()})}) { padding->
+               Box(Modifier.padding(padding)) {
                    NavHost(navController, startDestination = WELCOME) {
                        composable(WELCOME) { WelcomeScreen(navController) }
                        composable(SECOND_SCREEN) { SecondScreen() }
