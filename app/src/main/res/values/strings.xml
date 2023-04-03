@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ComposeApp</string>
+    <string name="layout_title">Layouts</string>
+    <string name="layout_column">Column</string>
+    <string name="layout_lazy_column">Lazy Column</string>
+    <string name="layout_lazy_row">Lazy Row</string>
+    <string name="Images_title">Images</string>
+    <string name="layout_row">Row</string>
+</resources>
