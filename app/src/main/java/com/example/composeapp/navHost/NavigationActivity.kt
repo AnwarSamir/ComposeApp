@@ -29,7 +29,11 @@ class NavigationActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val navController = rememberNavController()
-           Scaffold( topBar = { AppTopBar(onUpClick = {navController.navigateUp()})}) { padding->
+           Scaffold( topBar = { AppTopBar(onUpClick = {
+               if (navController.navigateUp())
+                   navController.navigateUp()
+               else onBackPressedDispatcher.onBackPressed()
+           })}) { padding->
                Box(Modifier.padding(padding)) {
                    NavHost(navController, startDestination = WELCOME) {
                        composable(WELCOME) { WelcomeScreen(navController) }
