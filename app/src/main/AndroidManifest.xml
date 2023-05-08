@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -10,8 +11,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".ComposeApp"
         android:theme="@style/Theme.ComposeApp"
         tools:targetApi="31">
+        <activity
+            android:name=".movieApp.ui.main.MovieAppActivity"
+            android:exported="false"
+            android:label="@string/title_activity_movie_app"
+            android:theme="@style/Theme.ComposeApp.NoActionBar" />
         <activity
             android:name=".navHost.NavigationActivity"
             android:exported="false" />

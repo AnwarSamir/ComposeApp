@@ -6,4 +6,11 @@
     <string name="layout_lazy_row">Lazy Row</string>
     <string name="Images_title">Images</string>
     <string name="layout_row">Row</string>
+    <string name="title_activity_movie_app">MovieAppActivity</string>
+    <string name="menu_movie">Movie</string>
+    <string name="menu_tv">Tv</string>
+    <string name="menu_person">Person</string>
+    <string name="reviews">Reviews</string>
+    <string name="summary">Summary</string>
+    <string name="trailers">Trailers</string>
 </resources>
