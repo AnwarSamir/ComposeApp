@@ -15,8 +15,8 @@ class TopRatedRepository constructor(
   }
 
 
-  fun getTopRated() = safeApiCalls {
-    return@safeApiCalls peopleService.fetchTopRated()
+  fun getTopRated(page:Int) = safeApiCalls {
+    return@safeApiCalls peopleService.fetchTopRated(page)
   }
 
 }

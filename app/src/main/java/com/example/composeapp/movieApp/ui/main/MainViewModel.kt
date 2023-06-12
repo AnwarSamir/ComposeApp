@@ -68,6 +68,7 @@ class MainViewModel @Inject constructor(
 
   val people: State<MutableList<Person>> = mutableStateOf(mutableListOf())
   val peoplePageStateFlow: MutableStateFlow<Int> = MutableStateFlow(1)
+
   private val newPeople = peoplePageStateFlow.flatMapLatest {
     _personLoadingState.value = NetworkState.LOADING
     peopleRepository.loadPeople(
