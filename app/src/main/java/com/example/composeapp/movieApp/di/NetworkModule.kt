@@ -9,6 +9,7 @@ import com.example.composeapp.movieApp.network.RequestInterceptor
 import com.example.composeapp.movieApp.network.service.MovieService
 import com.example.composeapp.movieApp.network.service.PeopleService
 import com.example.composeapp.movieApp.network.service.TheDiscoverService
+import com.example.composeapp.movieApp.network.service.TopRatedService
 import com.example.composeapp.movieApp.network.service.TvService
 import com.skydoves.sandwich.coroutines.CoroutinesResponseCallAdapterFactory
 import dagger.Module
@@ -77,5 +78,11 @@ object NetworkModule {
   @Singleton
   fun providePeopleService(retrofit: Retrofit): PeopleService {
     return retrofit.create(PeopleService::class.java)
+  }
+
+  @Provides
+  @Singleton
+  fun provideTopRatedService(retrofit: Retrofit): TopRatedService {
+    return retrofit.create(TopRatedService::class.java)
   }
 }

@@ -19,9 +19,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.composeapp.movieApp.ui.movie.MovieScreen
 import com.example.composeapp.movieApp.ui.people.PeopleScreen
 import com.example.composeapp.movieApp.ui.theme.purple200
+import com.example.composeapp.movieApp.ui.topRated.TopRatedScreen
 import com.example.composeapp.movieApp.ui.tv.TvScreen
 import com.google.accompanist.insets.navigationBarsHeight
 
@@ -81,6 +83,7 @@ fun HomeTabScreen(
           tabStateHolder.peopleLazyListState,
           modifier,
         )
+        MainScreenHomeTab.TopRated -> TopRatedScreen(viewModel = hiltViewModel(),modifier)
       }
     }
   }

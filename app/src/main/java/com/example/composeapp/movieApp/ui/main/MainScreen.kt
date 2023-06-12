@@ -6,12 +6,12 @@ import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.rememberLazyGridState
-import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.StarRate
 import androidx.compose.material.icons.filled.Tv
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
@@ -36,6 +36,7 @@ import com.example.composeapp.movieApp.ui.movie.MovieDetailScreen
 import com.example.composeapp.movieApp.ui.navigation.NavScreen
 import com.example.composeapp.movieApp.ui.people.PersonDetailScreen
 import com.example.composeapp.movieApp.ui.theme.purple200
+import com.example.composeapp.movieApp.ui.topRated.TopRatedScreen
 import com.example.composeapp.movieApp.ui.tv.TvDetailScreen
 
 @Composable
@@ -61,6 +62,7 @@ fun MainScreen() {
               MainScreenHomeTab.MOVIE -> navController.navigate("${NavScreen.MovieDetails.route}/$index")
               MainScreenHomeTab.TV -> navController.navigate("${NavScreen.TvDetails.route}/$index")
               MainScreenHomeTab.PERSON -> navController.navigate("${NavScreen.PersonDetails.route}/$index")
+              MainScreenHomeTab.TopRated -> navController.navigate("${NavScreen.TopRated}")
             }
           }
         )
@@ -140,5 +142,6 @@ enum class MainScreenHomeTab(
 ) {
   MOVIE(R.string.menu_movie, Icons.Filled.Home),
   TV(R.string.menu_tv, Icons.Filled.Tv),
-  PERSON(R.string.menu_person, Icons.Filled.Person);
+  PERSON(R.string.menu_person, Icons.Filled.Person),
+  TopRated(R.string.top_rated,Icons.Filled.StarRate)
 }
